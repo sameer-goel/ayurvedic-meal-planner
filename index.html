@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Choose your Ayurvedic dosha or take a short visual test, then explore meals shaped around your nature.">
+  <meta name="theme-color" content="#f4f1e9">
+  <meta property="og:title" content="Ayurvedic Meals for My Dosha Type">
+  <meta property="og:description" content="Discover food ideas for Vata, Pitta, and Kapha.">
+  <meta property="og:type" content="website">
+  <title>Ayurvedic Meals for My Dosha Type</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip-link" href="#dosha-select">Skip to dosha selection</a>
+
+  <header class="site-header">
+    <a class="wordmark" href="#dosha-select" aria-label="Ayurvedic Meals for My Dosha Type, home">
+      <span class="brand-mark" aria-hidden="true">✦</span>
+      <span>Ayurvedic Meals <small>for my dosha type</small></span>
+    </a>
+  </header>
+
+  <main>
+    <section class="dosha-entry" id="dosha-select" aria-labelledby="entry-title">
+      <div class="entry-heading">
+        <p class="eyebrow">Food guidance for your nature</p>
+        <h1 id="entry-title">Meet your dosha.</h1>
+        <p>If you know your type, choose it to explore every meal. If not, begin with the short test.</p>
+      </div>
+
+      <div class="dosha-map" role="group" aria-label="Choose your dosha type">
+        <svg class="dosha-lines" viewBox="0 0 600 600" aria-hidden="true" focusable="false">
+          <circle cx="300" cy="300" r="208"></circle>
+          <path d="M300 300 L300 92 M300 300 L480 410 M300 300 L120 410"></path>
+        </svg>
+
+        <div class="dosha-center" aria-hidden="true">
+          <span>Dosha</span>
+          <small>your nature</small>
+        </div>
+
+        <button class="dosha-node node-vata" type="button" data-dosha="vata" aria-label="Explore Vata meals">
+          <span class="node-symbol" aria-hidden="true">○</span>
+          <strong>Vata</strong>
+          <small>Air · Ether</small>
+          <span class="node-action" aria-hidden="true">Explore →</span>
+        </button>
+
+        <button class="dosha-node node-pitta" type="button" data-dosha="pitta" aria-label="Explore Pitta meals">
+          <span class="node-symbol" aria-hidden="true">△</span>
+          <strong>Pitta</strong>
+          <small>Fire · Water</small>
+          <span class="node-action" aria-hidden="true">Explore →</span>
+        </button>
+
+        <button class="dosha-node node-kapha" type="button" data-dosha="kapha" aria-label="Explore Kapha meals">
+          <span class="node-symbol" aria-hidden="true">□</span>
+          <strong>Kapha</strong>
+          <small>Earth · Water</small>
+          <span class="node-action" aria-hidden="true">Explore →</span>
+        </button>
+      </div>
+
+      <button class="quiet-action" id="take-quiz-btn" type="button">
+        Not sure? Take the 7-question test <span aria-hidden="true">→</span>
+      </button>
+    </section>
+
+    <section class="experience" id="experience" aria-label="Dosha test and meal guidance">
+      <section id="quiz" class="app-view hidden" aria-live="polite">
+        <div class="view-heading">
+          <p class="eyebrow">Dosha test</p>
+          <button id="close-quiz" class="text-action" type="button">Close</button>
+        </div>
+        <div id="quiz-container"></div>
+        <div class="quiz-nav">
+          <button id="quiz-prev" class="text-action" type="button">← Previous question</button>
+        </div>
+      </section>
+
+      <section id="results" class="app-view hidden" aria-live="polite">
+        <div id="dosha-result"></div>
+
+        <div class="meal-heading">
+          <div>
+            <p class="eyebrow">All meal ideas</p>
+            <h2>Meals for your dosha</h2>
+          </div>
+          <label class="meal-filter" for="meal-type">
+            <span>Show</span>
+            <select id="meal-type" aria-label="Filter meal ideas by type">
+              <option value="all">All meals</option>
+              <option value="breakfast">Breakfast</option>
+              <option value="lunch">Lunch</option>
+              <option value="dinner">Dinner</option>
+              <option value="snack">Snacks</option>
+            </select>
+          </label>
+        </div>
+
+        <div id="meals-grid" class="meals-grid"></div>
+        <div class="dietary-tips" id="dietary-tips"></div>
+
+        <div class="result-actions">
+          <button id="back-btn" class="text-action" type="button">← Choose another dosha</button>
+          <button id="result-quiz-btn" class="text-action" type="button">Take the dosha test →</button>
+        </div>
+
+        <p class="care-note">This result is an educational starting point, not a diagnosis or a substitute for medical or nutritional advice. People may reflect more than one dosha.</p>
+      </section>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wordmark footer-mark">
+      <span class="brand-mark" aria-hidden="true">✦</span>
+      <span>Ayurvedic Meals <small>for my dosha type</small></span>
+    </div>
+    <p>Food wisdom interpreted with care.</p>
+  </footer>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
